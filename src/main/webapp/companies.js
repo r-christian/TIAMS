@@ -40,6 +40,7 @@ function save() {
         xmlhttp.setRequestHeader("Content-Type", "application/json");
         xmlhttp.send(JSON.stringify(company));
     }
+    setStatus("New Company");
 }
 
 function loadCompanies() {
@@ -90,8 +91,13 @@ function loadCompanies() {
     xhttp.send();
 }
 
+function setStatus(status){
+    var statusElement = document.getElementById("status");
+    statusElement.textContent = status;
+}
 
 function editItemClicked(companyID){
+    setStatus("Editing - " + companyID);
     var hiddenId = document.getElementById("id");
     hiddenId.value = companyID;
     var txtName = document.getElementById("name");
