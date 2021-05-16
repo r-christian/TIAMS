@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <link rel="stylesheet" href="./style/main.css">
+</head>
+<body id="main-body">
+
+    <div align="center">
+        <ul class="form-style-1">
+            <input type="hidden" id="id" name="id" value="-1">
+            <li>
+                <label align="left">Full Name <span class="required">*</span></label>
+                <input id="firstname" required oninvalid="this.setCustomValidity('Firstname cannot be empty.')"
+                       onchange="this.setCustomValidity('')" type="text" name="firstName" class="field-divided" placeholder="Firstname" />
+                <input id="lastname" required oninvalid="this.setCustomValidity('Last name cannot be empty.')"
+                       onchange="this.setCustomValidity('')" type="text" name="lastName" class="field-divided" placeholder="Last name" />
+            </li>
+            <li>
+                <label align="left">Email: <span class="required">*</span></label>
+                <input id="email" required oninvalid="this.setCustomValidity('Email cannot be empty.')"
+                       onchange="this.setCustomValidity('')" style="width: 100%; cursor: auto;" type="text" name="email" class="field" placeholder="Email" />
+            </li>
+            <li>
+                <label align="left">Password: <span class="required">*</span></label>
+                <input id="password" required oninvalid="this.setCustomValidity('Password cannot be empty.')"
+                       onchange="this.setCustomValidity('')" style="width: 100%; cursor: auto;" type="password" name="password" class="field" placeholder="Password" />
+            </li>
+            <li>
+                <input type="submit" value="Save" id="save" onclick="save()"/>
+            </li>
+        </ul>
+    </div>
+
+    <div align="center">
+        <table id="tableMain" border="1" cellpadding="5">
+            <caption><h2>List of Users</h2></caption>
+            <tr>
+                <th>ID</th>
+                <th>Firstname</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Actions</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="./users.js"></script>
+    <script src="./header.js"></script>
+</body>
+</html>

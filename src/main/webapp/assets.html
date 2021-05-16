@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assets</title>
+    <link rel="stylesheet" href="./style/main.css">
+</head>
+<body id="main-body" onload="loadRelatedData()">
+
+    <ul align="center" class="form-style-1">
+        <input type="hidden" id="id" name="id" value="-1">
+        <input type="hidden" id="companiesHidden" name="companiesHidden" value="-1">
+        <input type="hidden" id="assetTypesHidden" name="assetTypesHidden" value="-1">
+        <li>
+            <label align="left">Company<span class="required">*</span></label>
+            <select style="width: 100%; cursor: auto;" name="companies" id="companies"></select>
+        </li>
+        <li>
+            <label align="left">Asset types<span class="required">*</span></label>
+            <select style="width: 100%; cursor: auto;" name="assetTypes" id="assetTypes"></select>
+        </li>
+        <li>
+            <label align="left">Name <span class="required">*</span></label>
+            <input id="name" required oninvalid="this.setCustomValidity('Name cannot be empty.')"
+                   onchange="this.setCustomValidity('')"  style="width: 100%; cursor: auto;" type="text" name="name" class="field" placeholder="Name" />
+        </li>
+        <li>
+            <label align="left">Manufacturer <span class="required">*</span></label>
+            <input id="manufacturer" required oninvalid="this.setCustomValidity('Manufacturer cannot be empty.')"
+                   onchange="this.setCustomValidity('')"  style="width: 100%; cursor: auto;" type="text" name="manufacturer" class="field" placeholder="Manufacturer" />
+        </li>
+        <li>
+            <label align="left">Quantity<span class="required">*</span></label>
+            <input id="quantity" required style="width: 100%; cursor: auto;" type="number" name="quantity" class="field" placeholder="quantity" value="1" />
+        </li>
+        <li>
+            <input type="submit" id="save" onclick="save()"  value="Save" />
+        </li>
+    </ul>
+    <div align="center">
+        <table id="tableMain" border="1" cellpadding="5">
+            <caption><h2>List of Assets</h2></caption>
+            <tr>
+                <th>ID</th>
+                <th>Company</th>
+                <th>Asset type</th>
+                <th>Name</th>
+                <th>Manufacturer</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="./assets.js"></script>
+    <script src="./header.js"></script>
+</body>
+</html>
